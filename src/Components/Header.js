@@ -3,11 +3,16 @@ import "./Header.css";
 import amazon_logo from "../assets/images/amazon_logo.png";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import { Link } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
 
 function Header() {
+  const [{cart}, dispatch] = useStateValue();
   return (
     <div className="header">
-      <img className="header_logo" src={amazon_logo} alt="amazon_logo"></img>
+      <Link to="/">
+        <img className="header_logo" src={amazon_logo} alt="amazon_logo"></img>
+      </Link>
       <div className="header_search">
         <input className="header_searchInput" type="text"></input>
         <SearchIcon className="header_searchIcon" />
@@ -25,10 +30,12 @@ function Header() {
           <span className="header_optionLineOne">Your</span>
           <span className="header_optionLineTwo">Prime</span>
         </div>
-        <div className="header_optionBskt">
-          <span className="header_optionLineTwo header__bsktCount">0</span>
-          <ShoppingCartOutlinedIcon className="shoppingCardIcon" />
-        </div>
+        <Link to="/checkout">
+          <div className="header_optionBskt">
+            <span className="header_optionLineTwo header__bsktCount">{cart?.length}</span>
+            <ShoppingCartOutlinedIcon className="shoppingCardIcon" />
+          </div>
+        </Link>
       </div>
     </div>
   );

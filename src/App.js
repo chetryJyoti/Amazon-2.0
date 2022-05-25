@@ -1,14 +1,20 @@
-import Header from "./Components/Header";
 import "./App.css";
+import Header from "./Components/Header";
 import Home from "./Components/Home";
+import Checkout from "./Components/Checkout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      {/* <h1>Lets continue tm 25/05/22 home page design</h1> */}
-      <Header />
-      <Home />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Routes>
+          <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
