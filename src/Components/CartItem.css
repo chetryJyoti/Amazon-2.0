@@ -1,0 +1,25 @@
+.cartItem {
+  display: flex;
+  margin: 24px 0;
+  padding: 1rem;
+  border: 1px solid lightgray;
+}
+.cartItem_img {
+  width: 180px;
+  height: 180px;
+}
+.cartItem_info{
+    padding: 1rem;
+}
+.cartItem_rating {
+  display: flex;
+}
+.cartItem_title{
+    font-size: 1rem;
+    font-weight: 500;
+}
+.cartItem_price{
+    margin-top: 5px;
+    font-size: 1.4rem;
+    font-weight: 800;
+}
