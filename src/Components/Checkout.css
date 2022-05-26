@@ -11,7 +11,10 @@
     margin-right: 10px;
 
 }
-.checkout_titile{
+.checkout_title1{
+    padding-left: 10px;
+}
+.checkout_title2{
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
